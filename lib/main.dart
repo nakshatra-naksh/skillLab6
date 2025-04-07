@@ -7,7 +7,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  @override
+  
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(body: Center(child: itemCount(name: 'Apple'))),
@@ -20,14 +20,14 @@ class itemCount extends StatefulWidget {
 
   const itemCount({super.key, required this.name});
 
-  @override
+
   _itemCounterstate createState() => _itemCounterstate();
 }
 
 class _itemCounterstate extends State<itemCount> {
   int count = 0;
 
-  @override
+
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
