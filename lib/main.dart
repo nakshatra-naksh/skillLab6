@@ -26,19 +26,37 @@ void main() {
         ),
         backgroundColor: const Color.fromARGB(255, 76, 124, 77),
         body: Center(
-          child: Container(
-            color: Colors.blue,
-            child: Text(
-              "hello bhai",
-              style: TextStyle(
-                fontSize: 36,
-                color: Colors.red,
-                fontWeight: FontWeight.w800,
-                decoration: TextDecoration.lineThrough,
-                decorationColor: Colors.black,
-                decorationThickness: 3.0,
+          child: Column(
+            children: [
+              Container(
+                color: Colors.blue,
+                child: Text(
+                  "hello bhai",
+                  style: TextStyle(
+                    fontSize: 36,
+                    color: Colors.red,
+                    fontWeight: FontWeight.w800,
+                    decoration: TextDecoration.lineThrough,
+                    decorationColor: Colors.black,
+                    decorationThickness: 3.0,
+                  ),
+                ),
               ),
-            ),
+              Container(
+                color: Colors.blue,
+                child: Text(
+                  "hello bhai 2",
+                  style: TextStyle(
+                    fontSize: 36,
+                    color: Colors.red,
+                    fontWeight: FontWeight.w800,
+                    decoration: TextDecoration.lineThrough,
+                    decorationColor: Colors.black,
+                    decorationThickness: 3.0,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
