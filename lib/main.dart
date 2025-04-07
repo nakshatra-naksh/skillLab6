@@ -10,7 +10,27 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(body: Center(child: itemCount(name: 'Apple'))),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: Column(
+            children: [
+              Container(
+                color: Colors.blue,
+                child: itemCount(name: 'Apple'),
+                padding: EdgeInsets.all(40),
+                margin: EdgeInsets.all(10),
+              ),
+              Container(
+                color: Colors.blue,
+                child: itemCount(name: 'Apple'),
+                padding: EdgeInsets.all(40),
+                margin: EdgeInsets.all(10),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
@@ -39,6 +59,7 @@ class _itemCounterstate extends State<itemCount> {
     );
   }
 }
+
 /*class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
