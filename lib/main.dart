@@ -1,100 +1,42 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 59, 183, 221),
-          centerTitle: true,
-          title: Text(
-            "basic flutter app 1",
-            style: TextStyle(
-              fontSize: 36,
-              color: Colors.red,
-              fontWeight: FontWeight.w800,
-            ),
-          ),
-          leading: Icon(Icons.menu),
-          actions: [
-            Icon(Icons.logout),
-            Icon(Icons.favorite),
-            Icon(Icons.feedback),
-            Icon(Icons.mail),
-          ],
-        ),
-        backgroundColor: const Color.fromARGB(255, 76, 124, 77),
-        body: Center(
-          child: Column(
-            children: [
-              Container(
-                color: Colors.blue,
-                child: Text(
-                  "hello bhai",
-                  style: TextStyle(
-                    fontSize: 36,
-                    color: Colors.red,
-                    fontWeight: FontWeight.w800,
-                    decoration: TextDecoration.overline,
-                    decorationColor: Colors.black,
-                    decorationThickness: 3.0,
-                  ),
-                ),
-                padding: EdgeInsets.all(40),
-                margin: EdgeInsets.all(10),
-              ),
-              SizedBox(height: 20),
-              Container(
-                //color: Colors.red,
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 104, 149, 201),
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: Colors.black, width: 10),
-                ),
-                child: Text(
-                  "hello bhai 2",
-                  style: TextStyle(
-                    fontSize: 36,
-                    color: Colors.red,
-                    fontWeight: FontWeight.w800,
-                    decoration: TextDecoration.underline,
-                    decorationColor: Colors.black,
-                    decorationThickness: 3.0,
-                  ),
-                ),
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                margin: EdgeInsets.all(10),
-              ),
-              Container(
-                color: Colors.blue,
-                child: Text(
-                  "hello bhai",
-                  style: TextStyle(
-                    fontSize: 36,
-                    color: Colors.red,
-                    fontWeight: FontWeight.w800,
-                    decoration: TextDecoration.overline,
-                    decorationColor: Colors.black,
-                    decorationThickness: 3.0,
-                  ),
-                ),
-                padding: EdgeInsets.only(
-                  left: 10,
-                  right: 10,
-                  top: 50,
-                  bottom: 50,
-                ),
-                margin: EdgeInsets.all(10),
-              ),
-            ],
-          ),
-        ),
-      ),
-    ),
-  );
+  runApp(MyApp());
 }
 
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(body: Center(child: itemCount(name: 'Apple'))),
+    );
+  }
+}
+
+class itemCount extends StatefulWidget {
+  final String name;
+
+  const itemCount({super.key, required this.name});
+
+  _itemCounterstate createState() => _itemCounterstate();
+}
+
+class _itemCounterstate extends State<itemCount> {
+  int count = 0;
+
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          count++;
+        });
+      },
+      child: Text('${widget.name}: $count'),
+    );
+  }
+}
 /*class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
