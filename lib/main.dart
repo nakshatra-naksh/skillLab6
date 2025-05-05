@@ -6,20 +6,53 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              ItemCount(name: 'Apple', initialValue: 0, increment: true),
-              SizedBox(height: 20),
-              ItemCount(name: 'Carbon', initialValue: 100, increment: false),
-            ],
-          ),
+        appBar: AppBar(
+          backgroundColor: Colors.amber,
+          centerTitle: true,
+          title: Text("click identifer"),
+          leading: Icon(Icons.menu),
+          actions: [Icon(Icons.logout)],
+        ),
+        body: ListView(
+          scrollDirection: Axis.horizontal,
+          children: [
+            Container(
+              padding: EdgeInsets.all(80.0), // Add padding around the ItemCount
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.blue,
+                  width: 2,
+                ), // Add a border for styling
+                borderRadius: BorderRadius.circular(
+                  8.0,
+                ), // Optional: rounded corners
+              ),
+              child: ItemCount(name: 'Apple', initialValue: 0, increment: true),
+            ),
+            SizedBox(width: 110),
+            Container(
+              padding: EdgeInsets.all(80.0), // Add padding around the ItemCount
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.red,
+                  width: 2,
+                ), // Add a border for styling
+                borderRadius: BorderRadius.circular(
+                  8.0,
+                ), // Optional: rounded corners
+              ),
+              child: ItemCount(
+                name: 'Carbon',
+                initialValue: 100,
+                increment: false,
+              ),
+            ),
+          ],
         ),
       ),
     );
