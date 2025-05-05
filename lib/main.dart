@@ -17,13 +17,22 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.amber,
           leading: Icon(Icons.menu),
         ),
-        body: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 5,
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () {
+              print('elevated button clickrd');
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.amber,
+              shadowColor: Colors.deepOrange,
+              foregroundColor: Colors.black,
+              padding: EdgeInsets.all(30),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+            child: Text('click me', style: TextStyle(fontSize: 20)),
           ),
-          itemBuilder: (context, index) {
-            return Container(color: Colors.amber, margin: EdgeInsets.all(2));
-          },
         ),
       ),
     );
