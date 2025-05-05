@@ -6,9 +6,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});
-
-  List names = ['John', 'Jim', 'Jane', 'Huma'];
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,13 +17,12 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.amber,
           leading: Icon(Icons.menu),
         ),
-        body: ListView.builder(
-          itemCount: names.length,
+        body: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 5,
+          ),
           itemBuilder: (context, index) {
-            return ListTile(
-              tileColor: Colors.yellow,
-              title: Text(names[index]),
-            );
+            return Container(color: Colors.amber, margin: EdgeInsets.all(2));
           },
         ),
       ),
