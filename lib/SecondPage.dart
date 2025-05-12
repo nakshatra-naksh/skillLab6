@@ -13,7 +13,7 @@ class SecondPage extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pushNamed(context, '/firstpage');
           },
           child: Text('Go Back To First Page'),
         ),
