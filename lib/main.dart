@@ -18,20 +18,8 @@ class MyApp extends StatelessWidget {
           leading: Icon(Icons.menu),
         ),
         body: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              print('elevated button clickrd');
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.amber,
-              shadowColor: Colors.deepOrange,
-              foregroundColor: Colors.black,
-              padding: EdgeInsets.all(30),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-            ),
-            child: Text('click me', style: TextStyle(fontSize: 20)),
+          child: Image.network(
+            'https://wallpapers.com/images/high/bmw-m8-4k-kzz9gak81hmvbmk9.webp',
           ),
         ),
       ),
