@@ -1,25 +1,34 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
+void main() => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
 }
 
-class MyApp extends StatelessWidget {
-  MyApp({super.key});
+class _MyAppState extends State<MyApp> {
+  bool _big = false;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('My App'),
-          centerTitle: true,
-          backgroundColor: Colors.amber,
-          leading: Icon(Icons.menu),
-        ),
+        appBar: AppBar(title: Text("AnimatedContainer")),
         body: Center(
-          child: Image.network(
-            'https://wallpapers.com/images/high/bmw-m8-4k-kzz9gak81hmvbmk9.webp',
+          child: GestureDetector(
+            onTap: () {
+              setState(() {
+                _big = !_big;
+              });
+            },
+            child: AnimatedContainer(
+              width: _big ? 200 : 100,
+              height: _big ? 200 : 100,
+              color: _big ? Colors.blue : Colors.red,
+              duration: Duration(seconds: 1),
+              curve: Curves.easeInOut,
+            ),
           ),
         ),
       ),
